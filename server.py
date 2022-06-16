@@ -11,11 +11,13 @@ from threading import Semaphore
 
 IMG_PROP = 1.0  #Image proportion
 TCP_PORT = 8084 #TCP Port
+IP_LISTEN = '0.0.0.0'
 
 ##Parameters
 parser = argparse.ArgumentParser()
 parser.add_argument('-s', '--size', type=float, default=1.0,  help='Image size, in proportion. Default: 1.0')
 parser.add_argument('-p', '--port', type=int, default=8084, help='TCP Port to listen. Default: 8084')
+parser.add_argument('-i', '--ip', type=str, default='0.0.0.0', help='IP addres to listen on. Default: 0.0.0.0 (all)')
 
 args = parser.parse_args()
 
@@ -23,6 +25,8 @@ if args.size:
     IMG_PROP=args.size
 if args.port:
     TCP_PORT=args.port
+if args.ip:
+    IP_LISTEN = args.ip
 
 
 frame_g = None #Frame (Global)
@@ -83,7 +87,7 @@ class ThreadCamServer(Thread):
 serv  = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 #Associa o socket a uma porta local
-serv.bind(('0.0.0.0',TCP_PORT))
+serv.bind((IP_LISTEN,TCP_PORT))
 serv.listen()
 
 print('oi')
