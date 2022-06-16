@@ -1,5 +1,5 @@
 # pycam
-Server that shares a camera with clients over network.
+Python application that shares a camera with over network.
 
 ## Running server
 
