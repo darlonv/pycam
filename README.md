@@ -9,6 +9,8 @@ The server opens the webcam and starts to listen on a tcp port, waiting for conn
 python3 pycam_server.py
 ```
 
+The server support multiple client connections.
+
 ## Running clients
 
 The client connects on the server and gets the frame. After it, it shows the frame on a window.
@@ -17,4 +19,4 @@ The client connects on the server and gets the frame. After it, it shows the fra
 python3 pycam_client.py --ip=localhost
 ```
 
-To exit the window, press ESC key.
+To exit the window, press ESC key. Multiple clients can be started.
