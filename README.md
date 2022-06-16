@@ -1,9 +1,9 @@
 # pycam
-Python application that shares a camera with over network.
+Python application that shares a camera with clients over the network.
 
 ## Running server
 
-The server opens the webcam and starts to listen on a tcp port, waiting for connections.
+The server opens the webcam and starts listening on a tcp port, waiting for connections.
 
 ```bash
 python3 pycam_server.py
